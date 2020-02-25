@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.max_rows', 100)
 
 import os
-path = 'data' + os.sep + 'preprocess1.csv'
+path = 'InsuranceForcast_xgboost.data' + os.sep + 'preprocess1.csv'
 data =pd.read_csv(path)
 print(data.head())
 
@@ -21,7 +21,7 @@ print(data.head())
 那么你认为我们应该同时使用它们吗？。在制作或训练模型时，我们应该尽量减少冗余特性，因为它减少了训练时间和许多优点。
 现在，从上面的图，我们可以看到，特征不显著相关。
 '''
-# sns.heatmap(data.corr(), annot=True, cmap='RdYlGn',linewidths=0.2)
+# sns.heatmap(InsuranceForcast_xgboost.data.corr(), annot=True, cmap='RdYlGn',linewidths=0.2)
 # fig = plt.gcf()
 # fig.set_size_inches(10, 8)
 # plt.show()
@@ -122,4 +122,4 @@ plt.xticks(fontsize=14)
 plt.yticks(fontsize=14)
 plt.show()
 
-data.to_csv('data' + os.sep + 'Features1.csv')
+data.to_csv('InsuranceForcast_xgboost.data' + os.sep + 'Features1.csv')
