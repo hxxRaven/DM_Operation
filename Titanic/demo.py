@@ -33,10 +33,10 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.max_rows', 100)
 
 import os
-path = 'data' + os.sep + 'train.csv'
+path = 'InsuranceForcast_xgboost.data' + os.sep + 'train.csv'
 
 data =pd.read_csv(path)
-# print(data.head())
+# print(InsuranceForcast_xgboost.data.head())
 
 
 print(data.isnull().sum())  #查看缺失值
@@ -45,7 +45,7 @@ print(data.info())  #查看数据类型和分布
 print(data.describe())
 
 #查看生存的比例数据
-# print(data['Survived'].value_counts())
+# print(InsuranceForcast_xgboost.data['Survived'].value_counts())
 fig, ax = plt.subplots(1, 2, figsize=(18, 8))
 data['Survived'].value_counts().plot.pie(explode=[0,0.1],autopct='%1.1f%%',ax=ax[0],shadow=True)
 ax[0].set_title('Survived')
@@ -174,7 +174,7 @@ plt.show()
 ##观察:1）存活的几率几乎为1 在pclass1和pclass2中的女人。2）pclass3 的乘客中男性和女性的生存率都是很偏低的。3）端口Q很不幸，因为那里都是3等舱的乘客。##
 
 #港口中也存在缺失值，在这里我用众数来进行填充了，因为S登船人最多呀
-# data.loc[data['Embarked'].isnull(), 'Embarked'] = 'S'
+# InsuranceForcast_xgboost.data.loc[InsuranceForcast_xgboost.data['Embarked'].isnull(), 'Embarked'] = 'S'
 data['Embarked'].fillna('S',inplace=True)
 print(data['Embarked'].isnull().sum())
 
@@ -228,4 +228,4 @@ Pclass：有，第一类乘客给你更好的生存机会的一个明显趋势�
 家庭：有1-2的兄弟姐妹、配偶或父母上1-3显示而不是独自一人或有一个大家庭旅行，你有更大的概率存活。
 '''
 
-data.to_csv('data' + os.sep + 'preprocess1.csv')
+data.to_csv('InsuranceForcast_xgboost.data' + os.sep + 'preprocess1.csv')
