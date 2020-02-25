@@ -1,8 +1,8 @@
 import pandas as pd
 import os
 
-test_path = 'data' + os.sep + 'user_tag_query.10W.TEST-1w.csv'
-train_path = 'data' + os.sep + 'user_tag_query.10W.TRAIN-1w.csv'
+test_path = 'InsuranceForcast_xgboost.data' + os.sep + 'user_tag_query.10W.TEST-1w.csv'
+train_path = 'InsuranceForcast_xgboost.data' + os.sep + 'user_tag_query.10W.TRAIN-1w.csv'
 
 data = pd.read_csv(train_path, encoding='gbk')
 print(data.info())

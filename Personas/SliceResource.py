@@ -36,7 +36,7 @@ with open(r'E:\pyworkspace\用户画像\data\user_tag_query.10W.TRAIN', 'r', enc
             data = line.split('\t')
             writedata = [data[0], data[1], data[2], data[3]]
             querystr = ''
-            # data[-1] = data[-1][:-1]
+            # InsuranceForcast_xgboost.data[-1] = InsuranceForcast_xgboost.data[-1][:-1]
             for d in data[4:]:
                 try:
                     cur_str = d.encode('utf8')
@@ -49,7 +49,7 @@ with open(r'E:\pyworkspace\用户画像\data\user_tag_query.10W.TRAIN', 'r', enc
             writedata.append(querystr)
             writer.writerow(writedata)
         except:
-            # print (data[0][0:20])
+            # print (InsuranceForcast_xgboost.data[0][0:20])
             continue
 
 
@@ -72,13 +72,13 @@ with open(r'E:\pyworkspace\用户画像\data\user_tag_query.10W.TEST', 'r',encod
                     cur_str = cur_str.decode('utf8')
                     querystr += cur_str + '\t'
                 except:
-                    #print (data[0][0:10])
+                    #print (InsuranceForcast_xgboost.data[0][0:10])
                     continue
             querystr = querystr[:-1]
             writedata.append(querystr)
             writer.writerow(writedata)
         except:
-            #print (data[0][0:20])
+            #print (InsuranceForcast_xgboost.data[0][0:20])
             continue
 
 print('finish')
