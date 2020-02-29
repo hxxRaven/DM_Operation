@@ -50,6 +50,7 @@ Y = data['Survived']
 #rbf
 model_svm1 = svm.SVC(kernel='rbf', C=1, gamma=0.1)   #核变化函数，软间隔力度，变化复杂程度
 model_svm1.fit(train_X, train_Y)
+model_svm1.sa
 prediction_svm1 = model_svm1.predict(test_X)
 # print(prediction_svm1)
 # print(test_Y)
